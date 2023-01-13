@@ -95,6 +95,11 @@ typedef enum : NSUInteger {
 - (void)destroyAccountStatusView;
 
 /**
+ * 找回密码
+ */
+- (void)getBackPasswordWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
  * 获取账号密码
  */
 - (NSDictionary *)getAccountInfo;
