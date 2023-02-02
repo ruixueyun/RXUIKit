@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RXUserInfoModel.h"
 #import <RXSDK_Pure/RXSDK_Pure.h>
-#import "RXUICommonRequestError.h"
+//#import "RX_CommonRequestError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,22 +48,17 @@ typedef enum : NSUInteger {
                              complete:(void(^)(BOOL success, NSString *username, NSString *password))complete;
 
 /**
- * 单条协议弹框
- * @param complete isAgree YES 同意  NO 不同意
- */
-- (void)setProtocolViewWithKey:(NSString *)key
-                      complete:(void(^)(BOOL isAgree))complete;
-
-/**
- * 声明（所有协议）
+ * 协议声明
  * @param key 默认展示的条款key
  */
 - (void)setPrivacyViewWithKey:(NSString *)key;
 
 /**
  * 实名认证
+ * @param canClose 是否展示关闭按钮，默认不展示
  */
-- (void)setApproveViewWithComplete:(void(^)(NSDictionary *backData, RXUICommonRequestError *error))complete;
+- (void)setApproveViewWithCanClose:(BOOL)canClose
+                          complete:(void(^)(NSDictionary *backData, RX_CommonRequestError *error))complete;
 
 /**
  * 防沉迷弹框
@@ -87,7 +82,7 @@ typedef enum : NSUInteger {
 /**
  * 绑定手机
  */
-- (void)bindingPhoneWithComplete:(void(^)(NSDictionary *response, RXUICommonRequestError *error))complete;
+- (void)bindingPhoneWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
  * 查询注销状态
