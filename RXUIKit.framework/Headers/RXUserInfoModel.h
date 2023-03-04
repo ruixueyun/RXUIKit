@@ -16,6 +16,7 @@ typedef enum : NSUInteger {
     RXUserType_w,       // 微信登录
     RXUserType_auth,    // 一键登录
     RXUserType_account, // 账号登录
+    RXUserType_history  // 历史账号
 } RXUserType;
 
 @interface RXUserInfoModel : NSObject
@@ -28,6 +29,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSString *userIcon;
 @property (nonatomic, copy) NSString *userPassword;
 @property (nonatomic, copy) NSString *userPhone;
+
 @end
 
 NS_ASSUME_NONNULL_END

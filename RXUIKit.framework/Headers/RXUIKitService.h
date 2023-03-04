@@ -28,11 +28,11 @@ typedef enum : NSUInteger {
 /**
  * 调用登录弹窗
  * @param accounts 要展示的登录方式，按照数组顺序展示
- * @param clickAddAccount 点击"注册/添加账号"回调
+ * @param privacies 协议地址，顺序固定为 0位用户协议，1位隐私协议
  * @param loginType 点击的登陆方式
  */
 - (void)setLoginViewWithAccounts:(NSMutableArray <RXUserInfoModel *> *)accounts
-                 clickAddAccount:(void(^)(void))clickAddAccount
+                       privacies:(NSArray *)privacies
                        loginType:(void(^)(LoginType loginType))loginType;
 
 // 关闭登陆弹窗
