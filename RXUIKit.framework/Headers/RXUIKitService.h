@@ -26,6 +26,13 @@ typedef enum : NSUInteger {
 + (instancetype)sharedSDK;
 
 /**
+ * 配置logo
+ * @param logo 展示的logo
+ * @param titleImage 展示的标题图片
+ */
+- (void)configLogo:(UIImage *)logo titleImage:(UIImage *)titleImage;
+
+/**
  * 调用登录弹窗
  * @param accounts 要展示的登录方式，按照数组顺序展示
  * @param privacies 协议地址，顺序固定为 0位用户协议，1位隐私协议
@@ -33,7 +40,8 @@ typedef enum : NSUInteger {
  */
 - (void)setLoginViewWithAccounts:(NSMutableArray <RXUserInfoModel *> *)accounts
                        privacies:(NSArray *)privacies
-                       loginType:(void(^)(LoginType loginType))loginType;
+                       loginType:(NSDictionary *(^)(LoginType loginType))loginType
+                        complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 // 关闭登陆弹窗
 - (void)closeLoginView;
@@ -50,21 +58,23 @@ typedef enum : NSUInteger {
 /**
  * 协议声明
  * @param key 默认展示的条款key
+ * @param legalData 法务信息api返回的数据
  */
-- (void)setPrivacyViewWithKey:(NSString *)key;
+- (void)setPrivacyViewWithKey:(NSString *)key
+                    legalData:(NSDictionary *)legalData;
 
 /**
  * 实名认证
  * @param canClose 是否展示关闭按钮，默认不展示
  */
-- (void)setApproveViewWithCanClose:(BOOL)canClose
-                          complete:(void(^)(NSDictionary *backData, RX_CommonRequestError *error))complete;
+- (void)setRealauthViewWithCanClose:(BOOL)canClose
+                           complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
  * 防沉迷弹框
  * @param title 标题
  * @param des 内容
- * @param type 按钮类型   AntiBtnType_logout按钮为退出游戏，点击后关闭进程   AntiBtnType_default按钮为知道了，点击后block回调
+ * @param type 按钮类型   AntiBtnType_logout按钮为退出游戏   AntiBtnType_default按钮为知道了，点击后block回调
  */
 - (void)setAntiAdditionViewWithTitle:(NSString *)title
                                  des:(NSString *)des
@@ -72,7 +82,7 @@ typedef enum : NSUInteger {
                             complete:(void(^)(void))complete;
 
 /**
- * 权限弹框
+ * 权限说明弹框
  * @param keys 要展示的权限key 传空展示所有权限
  * @param clickBlock 点击事件回调   status 0拒绝  1同意
  */
@@ -80,14 +90,17 @@ typedef enum : NSUInteger {
                   clickBlock:(void(^)(NSInteger status))clickBlock;
 
 /**
+ * 权限说明弹框
+ * @param legalData 法务信息api返回的数据
+ * @param clickBlock 点击事件回调   status 0拒绝  1同意
+ */
+- (void)setPermissionViewWithLegalData:(NSDictionary *)legalData
+                            clickBlock:(void(^)(NSInteger status))clickBlock;
+
+/**
  * 绑定手机
  */
 - (void)bindingPhoneWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
-
-/**
- * 查询注销状态
- */
-- (void)destroyAccountStatusView;
 
 /**
  * 找回密码

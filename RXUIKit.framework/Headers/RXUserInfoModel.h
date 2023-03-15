@@ -11,12 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
-    RXUserType_visitor, // 游客登录
-    RXUserType_apple,   // 苹果登录
-    RXUserType_w,       // 微信登录
-    RXUserType_auth,    // 一键登录
-    RXUserType_account, // 账号登录
-    RXUserType_history  // 历史账号
+    RXUserType_visitor = 1, // 游客登录
+    RXUserType_apple = 2,   // 苹果登录
+    RXUserType_w = 3,       // 微信登录
+    RXUserType_auth = 4,    // 一键登录
+    RXUserType_account = 5, // 账号登录
+    RXUserType_history = 6  // 历史账号
 } RXUserType;
 
 @interface RXUserInfoModel : NSObject
