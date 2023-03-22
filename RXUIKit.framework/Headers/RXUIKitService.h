@@ -7,9 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "RXUserInfoModel.h"
 #import <RXSDK_Pure/RXSDK_Pure.h>
-//#import "RX_CommonRequestError.h"
+#import "RXLoginUIConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,14 +33,13 @@ typedef enum : NSUInteger {
 
 /**
  * 调用登录弹窗
- * @param accounts 要展示的登录方式，按照数组顺序展示
- * @param privacies 协议地址，顺序固定为 0位用户协议，1位隐私协议
- * @param loginType 点击的登陆方式
+ * @param config 登录页基础配置
+ * @param loginEvent 页面操作事件，可回调自定义参数
+ * @param complete 登录结果
  */
-- (void)setLoginViewWithAccounts:(NSMutableArray <RXUserInfoModel *> *)accounts
-                       privacies:(NSArray *)privacies
-                       loginType:(NSDictionary *(^)(LoginType loginType))loginType
-                        complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+- (void)setLoginViewWithConfig:(RXLoginUIConfig *)config
+                    loginEvent:(NSDictionary *(^)(NSDictionary *loginEvent, LoginType loginType))loginEvent
+                      complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 // 关闭登陆弹窗
 - (void)closeLoginView;
@@ -108,9 +106,16 @@ typedef enum : NSUInteger {
 - (void)getBackPasswordWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
- * 获取账号密码
+ * 找回密码 扩展方式
+ * @param params 页面配置信息
+ * ！username 默认填充的账号
+ * ！password_regex 密码校验正则表达式
+ * ！account_type  账号类型提示 （1-通用提示 ，2-手机号提示，3-邮箱提示 [可选 默认 2]）
+ * ！password_hint 输入密码提示文本 [可选]
  */
-- (NSDictionary *)getAccountInfo;
+- (void)getBackPasswordWithParams:(NSDictionary *)params
+                    requestParams:(NSMutableDictionary *(^)(NSMutableDictionary *params))requestParams
+                         complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 @end
 
