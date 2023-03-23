@@ -108,10 +108,12 @@ typedef enum : NSUInteger {
 /**
  * 找回密码 扩展方式
  * @param params 页面配置信息
- * ！username 默认填充的账号
- * ！password_regex 密码校验正则表达式
- * ！account_type  账号类型提示 （1-通用提示 ，2-手机号提示，3-邮箱提示 [可选 默认 2]）
- * ！password_hint 输入密码提示文本 [可选]
+ * ！username 默认填充的账号    #NSString类型
+ * ！account_type  账号类型提示 （1-通用提示 ，2-手机号提示，3-邮箱提示 [可选 默认 2]）    #NSInteger类型
+ * ！password_hint 输入密码提示文本 [可选]    #NSString类型
+ * @param requestParams 回调函数
+ * ！params 会将手机号或邮箱，密码等参数返回，由客户端处理业务逻辑，SDK会根据 return 的 needBreak 参数决定是否继续执行
+ * 详情请参考文档示例
  */
 - (void)getBackPasswordWithParams:(NSDictionary *)params
                     requestParams:(NSMutableDictionary *(^)(NSMutableDictionary *params))requestParams
