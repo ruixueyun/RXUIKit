@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '3.2.0'
+  s.version          = '3.2.1'
   s.summary          = 'ruixue UI framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -33,6 +33,8 @@ TODO: Add long description of the pod here.
    s.source_files = '*.framework/Headers/*.{h,m,plist}'
   
    s.vendored_frameworks = '*.framework'
+  
+  s.resources          = "RXUIKit/RXUIKit.bundle"
   
   # s.resource_bundles = {
   #   'RXSDK' => ['RXSDK/Assets/*.png']
