@@ -69,14 +69,14 @@ typedef enum : NSUInteger {
                            complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
- * 防沉迷弹框
+ * 防沉迷
  * @param title 标题
  * @param des 内容
- * @param type 按钮类型   AntiBtnType_logout按钮为退出游戏   AntiBtnType_default按钮为知道了，点击后block回调
+ * @param btnTitle 按钮标题，点击后block回调
  */
 - (void)setAntiAdditionViewWithTitle:(NSString *)title
                                  des:(NSString *)des
-                                type:(AntiBtnType)type
+                            btnTitle:(NSString *)btnTitle
                             complete:(void(^)(void))complete;
 
 /**
