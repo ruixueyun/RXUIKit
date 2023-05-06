@@ -17,7 +17,21 @@ typedef enum : NSUInteger {
     AntiBtnType_default // 知道了
 } AntiBtnType; // 防沉迷按钮类型
 
+
+@protocol RXUILoginDelegate <NSObject>
+/**
+ * 登录回调
+ * @param response 返回数据，登录失败返回nil
+ * @param error 错误返回，登录成功返回nil
+ */
+- (void)rxu_LoginCallBackWithResponse:(NSDictionary * _Nullable)response error:(RX_CommonRequestError *)error;
+
+@end
+
+
 @interface RXUIKitService : NSObject
+
+@property (nonatomic, weak) id <RXUILoginDelegate> loginDelegate;
 
 /**
  * 获取SDK实例（单例）
