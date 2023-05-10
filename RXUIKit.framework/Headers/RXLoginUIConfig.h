@@ -41,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  * 显示账号密码登录或验证码登录，0 账号密码登录  1 验证码登录  默认账号密码登录
  */
 @property (nonatomic, assign) NSInteger loginViewType;
+/**
+ * 账号密码登录方式键盘类型，0 全键盘  1 数字键盘  默认全键盘
+ */
+@property (nonatomic, assign) NSInteger keyboardType;
 
 @end
 
