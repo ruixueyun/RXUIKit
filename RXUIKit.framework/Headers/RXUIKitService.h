@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <RXSDK_Pure/RXSDK_Pure.h>
 #import "RXLoginUIConfig.h"
+#import "RXUserCenterConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -47,6 +48,7 @@ typedef enum : NSUInteger {
 
 /**
  * 调用登录弹窗
+ * 有登录记录会显示快捷登录页面
  * @param config 登录页基础配置
  * @param loginEvent 页面操作事件，可回调自定义参数
  * @param complete 登录结果
@@ -55,17 +57,19 @@ typedef enum : NSUInteger {
                     loginEvent:(NSDictionary *(^)(NSDictionary *loginEvent, LoginType loginType))loginEvent
                       complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
+/**
+ * 调用登录弹窗
+ * 不显示快捷登录页面
+ * @param config 登录页基础配置
+ * @param loginEvent 页面操作事件，可回调自定义参数
+ * @param complete 登录结果
+ */
+- (void)setNormalLoginViewWithConfig:(RXLoginUIConfig *)config
+                          loginEvent:(NSDictionary *(^)(NSDictionary *loginEvent, LoginType loginType))loginEvent
+                            complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
 // 关闭登陆弹窗
 - (void)closeLoginView;
-
-/**
- * 注册/添加账号
- * @param extDic 扩展字段，可传nil
- * @param isSelect 协议是否勾选
- */
-- (void)setAddAccountViewWithIsSelect:(BOOL)isSelect
-                               extDic:(NSMutableDictionary * _Nullable)extDic
-                             complete:(void(^)(BOOL success, NSString *username, NSString *password))complete;
 
 /**
  * 协议声明
@@ -110,14 +114,14 @@ typedef enum : NSUInteger {
                             clickBlock:(void(^)(NSInteger status))clickBlock;
 
 /**
- * 绑定手机
- */
-- (void)bindingPhoneWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
-
-/**
  * 找回密码
  */
 - (void)getBackPasswordWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * 设置密码
+ */
+- (void)setPasswordWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
  * 找回密码 扩展方式
@@ -132,6 +136,27 @@ typedef enum : NSUInteger {
 - (void)getBackPasswordWithParams:(NSDictionary *)params
                     requestParams:(NSMutableDictionary *(^)(NSMutableDictionary *params))requestParams
                          complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * 用户中心
+ * @param config 基础配置
+ */
+- (void)userCenterWithConfig:(RXUserCenterConfig *)config
+                    complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * 撤销注销
+ */
+- (void)destroyAccountStatusView:(void(^)(DestroyClickType clickType))complete;
+
+/**
+ * 分享弹窗
+ * @param shareInfo 分享数据，传nil则由SDK调用埋点数据
+ * @param needReport 分享成功后是否需要自动上报
+ */
+- (void)shareWithShareInfo:(NSDictionary *)shareInfo
+                needReport:(BOOL)needReport
+                  complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 @end
 

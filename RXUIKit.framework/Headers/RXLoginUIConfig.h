@@ -10,13 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RXLoginUIConfig : NSObject
+ @interface RXLoginUIConfig : NSObject
+
 /**
  * @param loginTypes 要配置的登录类型，按照数组顺序展示
  * wechat    微信
  * visitor      游客登录
  * apple       苹果登录
- * auth         一键登录
  * account   账号登录
  * history     历史账号
  */
@@ -38,13 +38,40 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL isShowClose;
 /**
- * 显示账号密码登录或验证码登录，0 账号密码登录  1 验证码登录  默认账号密码登录
+ * 显示账号密码登录或验证码登录，0 账号密码登录  1 验证码登录  默认验证码登录
  */
 @property (nonatomic, assign) NSInteger loginViewType;
 /**
- * 账号密码登录方式键盘类型，0 全键盘  1 数字键盘  默认全键盘
+ * 账号密码登录方式键盘类型，1 全键盘  2 数字键盘 3 邮箱键盘  默认全键盘
  */
 @property (nonatomic, assign) NSInteger keyboardType;
+/**
+ * 未实名用户登录成功后是否需要强制实名认证，默认强制
+ * 注：强制实名后登录数据将在实名认证成功后返回
+ */
+@property (nonatomic, assign) BOOL needRealAuth;
+/**
+ * 实名认证是否可关闭，默认可关闭
+ */
+@property (nonatomic, assign) BOOL canCloseRealAuth;
+/**
+ * 验证码登录的新用户是否弹出设置密码，默认不弹出
+ * 注：弹出设置密码后登录数据将在设置成功或关闭设置页面后返回
+ */
+@property (nonatomic, assign) BOOL needSetPassword;
+/**
+ * 是否显示底部快速登录按钮，默认显示
+ */
+@property (nonatomic, assign) BOOL isQuickButtonBarVisible;
+/**
+ * 处于注销中的用户登录后是否显示注销窗口
+ */
+@property (nonatomic, assign) BOOL isShowDeregister;
+/**
+ * 注销按钮显示继续登录或退出登录
+ * login登录，logout退出登录
+ */
+@property (nonatomic, strong) NSString *deregisterType;
 
 @end
 
