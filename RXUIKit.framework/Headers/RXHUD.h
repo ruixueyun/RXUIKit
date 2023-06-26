@@ -20,9 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)instantce;
 
-/**
- * 
- */
 + (void)showHUD;
 + (void)showHUDWithOffset:(CGRect)rect;
 + (void)hideHUD;
