@@ -158,6 +158,14 @@ typedef enum : NSUInteger {
                 needReport:(BOOL)needReport
                   complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
+/**
+ * 自定义webView
+ * @param url 链接
+ * @param title 标题
+ */
+- (void)openWebViewWithUrl:(NSString *)url
+                     title:(NSString *)title;
+
 @end
 
 NS_ASSUME_NONNULL_END
