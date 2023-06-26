@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL isQuickButtonBarVisible;
 /**
- * 处于注销中的用户登录后是否显示注销窗口
+ * 处于注销中的用户登录后是否显示注销窗口，默认不显示
  */
 @property (nonatomic, assign) BOOL isShowDeregister;
 /**
