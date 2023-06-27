@@ -146,8 +146,10 @@ typedef enum : NSUInteger {
 
 /**
  * 撤销注销
+ * @param deregisterType login登录，logout退出登录
  */
-- (void)destroyAccountStatusView:(void(^)(DestroyClickType clickType))complete;
+- (void)destroyAccountStatusViewWithDeregisterType:(NSString *)deregisterType
+                                          complete:(void(^)(DestroyClickType clickType))complete;
 
 /**
  * 分享弹窗
