@@ -145,8 +145,22 @@ typedef enum : NSUInteger {
                     complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
+ * 帮助中心
+ * @param config 基础配置
+ */
+- (void)serviceCenterWithConfig:(RXUserCenterConfig *)config
+                       complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * 客服
+ * @param config 基础配置
+ */
+- (void)chatServiceWithConfig:(RXUserCenterConfig *)config
+                     complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
  * 撤销注销
- * @param deregisterType login登录，logout退出登录
+ * @param deregisterType login继续登录，logout退出登录
  */
 - (void)destroyAccountStatusViewWithDeregisterType:(NSString *)deregisterType
                                           complete:(void(^)(DestroyClickType clickType))complete;
