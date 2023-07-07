@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '3.3.3.9'
+  s.version          = '3.3.4'
   s.summary          = 'ruixue UI framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -46,6 +46,7 @@ TODO: Add long description of the pod here.
   s.frameworks = 'AdSupport', 'iAd', 'Foundation', 'UIKit', 'CoreTelephony', 'Network'
   s.libraries = 'sqlite3', 'c++', 'c++abi', 'z'
 #
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '10.0'
+  s.dependency 'MBProgressHUD'
   
 end
