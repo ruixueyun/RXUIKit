@@ -159,6 +159,13 @@ typedef enum : NSUInteger {
                      complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
+ * 申请注销
+ */
+- (void)applyForDeregisterWithConfig:(RXUserCenterConfig *)config
+                            complete:(void(^)(NSDictionary *response))complete;
+
+
+/**
  * 撤销注销
  * @param deregisterType login继续登录，logout退出登录
  */

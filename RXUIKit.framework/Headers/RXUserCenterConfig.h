@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RXUserCenterConfig : NSObject
 
 /**
- * 账号注销透传数据，使用jsonString形式
+ * 透传数据，使用jsonString形式
  */
 @property (nonatomic, strong) NSString *transmit_args;
 /**
