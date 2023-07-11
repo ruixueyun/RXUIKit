@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  * visitor      游客登录
  * apple       苹果登录
  * account   账号登录
- * history     历史账号
+ * code/captchacode  验证码登录
  */
 @property (nonatomic, strong) NSArray *loginTypes;
 /**
