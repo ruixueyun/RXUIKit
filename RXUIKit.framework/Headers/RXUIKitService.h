@@ -87,6 +87,11 @@ typedef enum : NSUInteger {
                            complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
+ * 关闭实名认证弹窗
+ */
+- (void)closeRealauthView;
+
+/**
  * 防沉迷
  * @param title 标题
  * @param des 内容
