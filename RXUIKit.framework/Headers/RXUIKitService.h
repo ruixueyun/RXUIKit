@@ -185,6 +185,7 @@ typedef enum : NSUInteger {
  * @param btnTitle 按钮标题
  * @param complete 点击回调
  * btnTitle 传入的按钮标题
+ * 撤销注销成功返回  "撤销注销"
  */
 - (void)destroyAccountStatusViewWithBtnTitle:(NSString *)btnTitle
                                     complete:(void(^)(NSString *btnTitle))complete;
