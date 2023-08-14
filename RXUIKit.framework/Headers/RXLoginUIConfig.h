@@ -14,11 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @param loginTypes 要配置的登录类型，按照数组顺序展示
- * wechat    微信
- * visitor      游客登录
- * apple       苹果登录
- * account   账号登录
- * code/captchacode  验证码登录
+ * wechat          微信
+ * visitor            游客登录
+ * apple             苹果登录
+ * account         账号登录
+ * captchacode 验证码登录
+ * quickphone   一键登录
  */
 @property (nonatomic, strong) NSArray *loginTypes;
 /**

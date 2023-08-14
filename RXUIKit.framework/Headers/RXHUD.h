@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD.h"
 //#import "MBProgressHUD+Extension.h"
 
 static CGFloat showDelayTime = 1.5;
