@@ -29,6 +29,7 @@ typedef void(^WebViewClose)(void);
 @property (nonatomic, assign) BOOL visibleHUD;
 @property (nonatomic, strong) RXUserCenterConfig *userCenterConfig;
 @property (nonatomic, assign) BOOL isUserCenter;
+@property (nonatomic, assign) BOOL needRefreshToken;
 
 - (NSString *)setCookie;
 
