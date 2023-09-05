@@ -30,6 +30,8 @@ typedef void(^WebViewClose)(void);
 @property (nonatomic, strong) RXUserCenterConfig *userCenterConfig;
 @property (nonatomic, assign) BOOL isUserCenter;
 @property (nonatomic, assign) BOOL needRefreshToken;
+@property (nonatomic, strong) NSString *protocolKey;
+@property (nonatomic, strong) NSArray *protocolKeyList;
 
 - (NSString *)setCookie;
 
