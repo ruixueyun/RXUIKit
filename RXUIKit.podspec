@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '3.3.9'
+  s.version          = '3.3.10'
   s.summary          = 'ruixue UI framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/ruixueyun/RXUIKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '11.0'
 
    s.source_files = '*.framework/Headers/*.{h,m,plist}'
   
@@ -46,7 +46,7 @@ TODO: Add long description of the pod here.
   s.frameworks = 'AdSupport', 'iAd', 'Foundation', 'UIKit', 'CoreTelephony', 'Network'
   s.libraries = 'sqlite3', 'c++', 'c++abi', 'z'
 #
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '11.0'
   s.dependency 'RXSDK_Pure'
   
 end
