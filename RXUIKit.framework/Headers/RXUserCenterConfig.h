@@ -38,7 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL setLightTheme;
 /**
- * @note 不可用
  * 用户中心是否展示同步信息按钮，默认不展示
  * 用于同步三方信息
  * YES 为展示，NO 为不展示
@@ -57,6 +56,12 @@ NS_ASSUME_NONNULL_BEGIN
  *   }
  */
 @property (nonatomic, strong) NSDictionary *setConfigParams;
+/**
+ * 帮助中心和客服页面是否允许横竖屏旋转
+ * @note 使用该属性工程配置必须支持横竖屏旋转
+ * YES 为可以，NO 为不可以，默认 NO
+ */
+@property (nonatomic, assign) BOOL orientationVisible;
 
 @end
 
