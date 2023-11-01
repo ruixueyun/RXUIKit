@@ -6,11 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RXUserCenterConfig : NSObject
 
+/**
+ * 显示的logo
+ */
+@property (nonatomic, strong) UIImage *logoImage;
 /**
  * 透传数据，使用jsonString形式
  */
