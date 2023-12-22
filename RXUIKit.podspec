@@ -8,7 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '3.4.10'
+#  s.version          = '3.4.10'
+    s.version          = '3.3.100'
   s.summary          = 'ruixue UI framework.'
 
 # This description is used to generate tags and improve searc results.
