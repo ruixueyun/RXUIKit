@@ -233,6 +233,12 @@ typedef enum : NSUInteger {
  */
 - (void)syncAccounts:(NSArray <NSDictionary *> *)accounts;
 
+/**
+ * 隐私政策弹框
+ * @param agree YES 同意，NO 拒绝
+ */
+- (void)userPrivacyPolicyWithComplete:(void(^)(BOOL agree))complete;
+
 @end
 
 NS_ASSUME_NONNULL_END
