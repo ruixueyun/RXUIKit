@@ -65,6 +65,7 @@ typedef enum : NSUInteger {
  * @param complete 登录结果
  */
 - (void)setNormalLoginViewWithConfig:(RXLoginUIConfig *)config
+                              isAuth:(BOOL)isAuth
                           loginEvent:(NSDictionary *(^)(NSDictionary *loginEvent, LoginType loginType))loginEvent
                             complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete DEPRECATED_MSG_ATTRIBUTE("use showLoginUIWithConfig:complete: instead");
 
