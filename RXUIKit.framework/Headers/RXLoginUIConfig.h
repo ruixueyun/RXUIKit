@@ -73,6 +73,11 @@ NS_ASSUME_NONNULL_BEGIN
  * login登录，logout退出登录
  */
 @property (nonatomic, strong) NSString *deregisterType;
+/**
+ * 是否展示登录历史弹窗，true 展示，false 不展示，默认 ture
+ * @note SDK 会记录已登录的账号记录，下次调用会展示登录历史弹窗
+ */
+@property (nonatomic, assign) BOOL isHistoryViewEnable;
 
 @end
 

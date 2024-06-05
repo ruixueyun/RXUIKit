@@ -41,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)showText:(NSString *)text;
 /**
+ * 添加文字loading，没有icon，支持设置展示时长
+ */
++ (void)showText:(NSString *)text delay:(NSInteger)delay;
+/**
  * 成功icon+文字
  */
 + (void)showSuccessText:(NSString *)text;
@@ -48,6 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
  * 失败icon+文字
  */
 + (void)showErrorText:(NSString *)text;
+
+/**
+ * 失败icon+文字，支持设置展示时长
+ */
++ (void)showErrorText:(NSString *)text delay:(NSInteger)delay;
 
 @end
 

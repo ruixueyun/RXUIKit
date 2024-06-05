@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-   s.version          = '3.4.25'
+   s.version          = '3.4.26'
   #  s.version          = '3.3.105'
   s.summary          = 'ruixue UI framework.'
 
