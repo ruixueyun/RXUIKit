@@ -31,6 +31,7 @@ typedef void(^WebViewClose)(void);
 @property (nonatomic, assign) BOOL isUserCenter;
 @property (nonatomic, assign) BOOL needRefreshToken;
 @property (nonatomic, assign) BOOL needOri;
+@property (nonatomic, assign) BOOL isService;
 @property (nonatomic, strong) NSString *protocolKey;
 @property (nonatomic, strong) NSArray *protocolKeyList;
 
