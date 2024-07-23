@@ -74,6 +74,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) NSString *deregisterType;
 /**
+ * 是否为审核模式
+ * @note 审核模式只展示苹果登录，且和正常样式不同
+ */
+@property (nonatomic, assign) BOOL isAudit;
+/**
  * 是否展示登录历史弹窗，true 展示，false 不展示，默认 ture
  * @note SDK 会记录已登录的账号记录，下次调用会展示登录历史弹窗
  */
