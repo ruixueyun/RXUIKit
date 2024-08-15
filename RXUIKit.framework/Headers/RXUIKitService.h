@@ -239,6 +239,11 @@ typedef enum : NSUInteger {
  */
 - (void)userPrivacyPolicyWithComplete:(void(^)(BOOL agree))complete;
 
+/**
+ * 绑定手机，如果已绑定手机会跳转到换绑页面
+ */
+- (void)bindPhoneWithComplete:(void(^)(NSDictionary *response))complete cancelBlock:(void(^)(RX_CommonRequestError *error))rightClose;
+
 @end
 
 NS_ASSUME_NONNULL_END

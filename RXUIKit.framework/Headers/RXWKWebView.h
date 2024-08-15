@@ -9,11 +9,13 @@
 #import <WebKit/WebKit.h>
 #import "RXCloseBtn.h"
 #import "RXUserCenterConfig.h"
+#import <RXSDK_Pure/RXSDK_Pure.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^WebViewComplete)(NSDictionary *response);
 typedef void(^WebViewClose)(void);
+typedef void(^CloseComplete)(RX_CommonRequestError *error);
 
 @interface RXWKWebView : UIView
 
@@ -21,6 +23,7 @@ typedef void(^WebViewClose)(void);
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, copy) WebViewComplete complete;
 @property (nonatomic, copy) WebViewClose close;
+@property (nonatomic, copy) CloseComplete rightClose;
 @property (nonatomic, strong) UIView *naviBar;
 @property (nonatomic, strong) RXCloseBtn *backBtn;
 @property (nonatomic, strong) RXCloseBtn *closeBtn;
