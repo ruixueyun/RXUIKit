@@ -241,8 +241,9 @@ typedef enum : NSUInteger {
 
 /**
  * 绑定手机，如果已绑定手机会跳转到换绑页面
+ * @param complete 绑定或换绑手机操作完成后，无论成功或失败，均执行此block
  */
-- (void)bindPhoneWithComplete:(void(^)(NSDictionary *response))complete cancelBlock:(void(^)(RX_CommonRequestError *error))rightClose;
+- (void)bindPhoneWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 @end
 
