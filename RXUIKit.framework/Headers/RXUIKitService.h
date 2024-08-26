@@ -240,6 +240,13 @@ typedef enum : NSUInteger {
 - (void)userPrivacyPolicyWithComplete:(void(^)(BOOL agree))complete;
 
 /**
+ * 展示邮件
+ * cpUserId cp方userID
+ */
+- (void)showEmailViewWithCpUserId:(NSString *)cpUserId
+                     withComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complet;
+
+/**
  * 绑定手机，如果已绑定手机会跳转到换绑页面
  * @param complete 绑定或换绑手机操作完成后，无论成功或失败，均执行此block
  */
