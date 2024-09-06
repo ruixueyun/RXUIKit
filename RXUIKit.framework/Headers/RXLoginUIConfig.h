@@ -7,15 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <RXSDK_Pure/RXLoginUIModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RXLoginUIConfig : NSObject
-/**
- * 登录模式
- */
-@property (nonatomic, assign) LoginMode loginMode;
+ @interface RXLoginUIConfig : NSObject
+
 /**
  * @param loginTypes 要配置的登录类型，按照数组顺序展示
  * wechat          微信
