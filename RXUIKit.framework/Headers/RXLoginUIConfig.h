@@ -83,6 +83,10 @@ NS_ASSUME_NONNULL_BEGIN
  * @note SDK 会记录已登录的账号记录，下次调用会展示登录历史弹窗
  */
 @property (nonatomic, assign) BOOL isHistoryViewEnable;
+/**
+ * 协议是否勾选
+ */
+@property (nonatomic, assign) BOOL isPrivacySelected;
 
 @end
 

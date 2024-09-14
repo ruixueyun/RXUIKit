@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)showHUD;
 /**
+ * 展示HUD，非自动关闭，一直存在
+ */
++ (void)showHUDNotAutoHide;
+/**
  * 展示HUD，可设置偏移量
  */
 + (void)showHUDWithOffset:(CGRect)rect;
