@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '3.5.28'
+  s.version          = '3.5.29'
   #s.version          = '3.0.0.102'
   s.summary          = 'ruixue UI framework.'
 
@@ -51,6 +51,5 @@ TODO: Add long description of the pod here.
   s.dependency 'RXSDK_Pure'
   s.dependency 'RXWXSDK'
   s.dependency 'RXAuthSDK_official'
-  s.dependency 'TZImagePickerController/Basic', '3.8.7'
   
 end
