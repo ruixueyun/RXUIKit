@@ -52,15 +52,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) NSInteger keyboardType;
 /**
- * 未实名用户登录成功后是否需要强制实名认证，默认强制
- * 注：强制实名后登录数据将在实名认证成功后返回
- */
-@property (nonatomic, assign) BOOL needRealAuth;
-/**
- * 实名认证是否可关闭，默认可关闭
- */
-@property (nonatomic, assign) BOOL canCloseRealAuth;
-/**
  * 验证码登录的新用户是否弹出设置密码，默认不弹出
  * 注：弹出设置密码后登录数据将在设置成功或关闭设置页面后返回
  */
@@ -79,6 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) NSString *deregisterType;
 /**
+ * 自定义参数
+ */
+@property (nonatomic, strong) NSDictionary *setCustomParams;
+/**
  * 是否为审核模式
  * @note 审核模式只展示苹果登录，且和正常样式不同
  */
@@ -92,6 +87,24 @@ NS_ASSUME_NONNULL_BEGIN
  * 协议是否勾选
  */
 @property (nonatomic, assign) BOOL isPrivacySelected;
+/**
+ * 指定对登录成功后返回的特定字段, 使用 CPKEY 计算签名. CP 服务器可重新计算签名并与登录返回的签名比对, 作为对瑞雪登录数据的校验. 支持的字段包括: nickname, avatar, openid, region, sex, age, 计算签名的逻辑会对指定字段进行排序, 此处传参与顺序无关。类型为字符串数组 @[@"nickname",@"avatar"]
+ */
+@property (nonatomic, strong) NSArray *signFields;
+/**
+ * 任意合法的 json 类型, 比如 string, number，账号迁移用的参数, 调用 CP account-query 及 account-queryandbind 接口时透传给 CP
+ */
+@property (nonatomic, assign) id migrateArgs;
+/**
+ * 二次登录 loginOpenid
+ * @note 传入 method 和 loginOpenid 后将不会拉起登录 UI，直接调用二次登录，登录失效会默认进行授权登录
+ */
+@property (nonatomic, strong) NSString *loginOpenid;
+/**
+ * 二次登录 method
+ * @note 传入 method 和 loginOpenid 后将不会拉起登录 UI，直接调用二次登录，登录失效会默认进行授权登录
+ */
+@property (nonatomic, strong) NSString *method;
 
 @end
 

@@ -77,6 +77,15 @@ typedef enum : NSUInteger {
 - (void)showLoginUIWithConfig:(RXLoginUIModel *)config
                      complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
+/**
+ * 调用登录弹窗
+ * @note login_openid 是否失效，YES 失效，NO 有效，config 需要和 showLoginUI 配置相同
+ * @param config 登录页基础配置，默认读取后台配置，优先读取代码配置
+ * @param complete 登录结果
+ */
+- (BOOL)loginOpenidExpireInvalidWithConfig:(RXLoginUIModel *)config
+                                  complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
 // 关闭登陆弹窗
 - (void)closeLoginView;
 
@@ -100,10 +109,8 @@ typedef enum : NSUInteger {
 
 /**
  * 实名认证
- * @param canClose 是否展示关闭按钮，默认不展示
  */
-- (void)setRealauthViewWithCanClose:(BOOL)canClose
-                           complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+- (void)setRealauthViewWithComplete:(void(^)(NSDictionary *backData, RX_CommonRequestError *error))complete;
 
 /**
  * 关闭实名认证弹窗
@@ -268,15 +275,15 @@ typedef enum : NSUInteger {
  */
 - (void)showAnnounceViewWithTitle:(NSString *)title content:(NSString *)content linkCallBack:(void(^)(NSString *link))linkCallBack;
 
-/**
- * 我的意见反馈列表
- */
-- (void)showFeedbackListView;
-
-/**
- * 创建意见反馈
- */
-- (void)showCreateFeedbackView;
+///**
+// * 我的意见反馈列表
+// */
+//- (void)showFeedbackListView;
+//
+///**
+// * 创建意见反馈
+// */
+//- (void)showCreateFeedbackView;
 
 
 
