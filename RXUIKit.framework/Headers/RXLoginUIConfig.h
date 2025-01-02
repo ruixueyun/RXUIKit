@@ -70,9 +70,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) NSString *deregisterType;
 /**
+ * 快速开始登录方式显示名称
+ * @note 默认显示 “快速开始”
+ */
+@property (nonatomic, strong) NSString *guestTitle;
+/**
  * 自定义参数
  */
 @property (nonatomic, strong) NSDictionary *setCustomParams;
+/**
+ * 自定义透传参数
+ */
+@property (nonatomic, strong) NSDictionary *setCustomExt;
 /**
  * 是否为审核模式
  * @note 审核模式只展示苹果登录，且和正常样式不同
