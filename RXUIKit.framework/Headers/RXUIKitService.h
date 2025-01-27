@@ -10,6 +10,7 @@
 #import <RXSDK_Pure/RXSDK_Pure.h>
 #import "RXLoginUIConfig.h"
 #import "RXUserCenterConfig.h"
+#import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -279,6 +280,11 @@ typedef enum : NSUInteger {
  * content 维护公告内容
  */
 - (void)showAnnounceViewWithTitle:(NSString *)title content:(NSString *)content linkCallBack:(void(^)(NSString *link))linkCallBack;
+
+/**
+ * 设置 webView
+ */
+- (void)setWebView:(WKWebView *)webView;
 
 ///**
 // * 我的意见反馈列表
