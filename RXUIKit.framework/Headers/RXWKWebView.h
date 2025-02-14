@@ -35,6 +35,7 @@ typedef void(^CloseComplete)(RX_CommonRequestError *error);
 @property (nonatomic, assign) BOOL needRefreshToken;
 @property (nonatomic, assign) BOOL needOri;
 @property (nonatomic, assign) BOOL isService;
+@property (nonatomic, assign) BOOL fobidSelect; // 是否允许长按选取
 @property (nonatomic, strong) NSString *protocolKey;
 @property (nonatomic, strong) NSArray *protocolKeyList;
 
