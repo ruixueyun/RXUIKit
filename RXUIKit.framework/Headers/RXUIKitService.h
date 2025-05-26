@@ -110,8 +110,10 @@ typedef enum : NSUInteger {
 
 /**
  * 实名认证
+ * @param canClose 是否展示关闭按钮，默认不展示
  */
-- (void)setRealauthViewWithComplete:(void(^)(NSDictionary *backData, RX_CommonRequestError *error))complete;
+- (void)setRealauthViewWithCanClose:(BOOL)canClose
+                           complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
  * 关闭实名认证弹窗
