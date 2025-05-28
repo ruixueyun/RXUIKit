@@ -93,7 +93,7 @@ typedef enum : NSUInteger {
  * @param complete 登录结果
  */
 - (BOOL)showLoginViewWithConfig:(RXLoginUIModel *)config
-                                  complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+                       complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 // 关闭登陆弹窗
 - (void)closeLoginView;
