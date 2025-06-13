@@ -124,6 +124,11 @@ typedef enum : NSUInteger {
                            complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
+ * 实名认证
+ */
+- (void)setRealauthViewWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
  * 关闭实名认证弹窗
  */
 - (void)closeRealauthView;
