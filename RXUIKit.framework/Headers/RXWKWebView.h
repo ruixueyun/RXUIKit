@@ -38,12 +38,15 @@ typedef void(^CloseComplete)(RX_CommonRequestError *error);
 @property (nonatomic, assign) BOOL fobidSelect; // 是否允许长按选取
 @property (nonatomic, strong) NSString *protocolKey;
 @property (nonatomic, strong) NSArray *protocolKeyList;
+@property (nonatomic, strong) NSString *viewTag;
 
 - (NSString *)setCookie;
 
 - (void)showNavi:(BOOL)show;
 
 - (void)layoutViews;
+
+- (void)hide;
 
 @end
 

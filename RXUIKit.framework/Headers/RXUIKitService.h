@@ -95,6 +95,24 @@ typedef enum : NSUInteger {
 - (BOOL)showLoginViewWithConfig:(RXLoginUIModel *)config
                        complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
+/**
+ * 调用一键登录登录弹窗
+ * @note 仅弹出一键登录，不支持配置多登录方式
+ * @param config 登录页基础配置，默认读取后台配置，优先读取代码配置
+ * @param complete 登录结果
+ */
+- (void)showAuthLoginViewWithConfig:(RXLoginUIModel *)config
+                           complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * 调用验证码/账号密码登录弹窗
+ * @note 仅弹出验证码/账号密码登录，不支持配置多登录方式
+ * @param config 登录页基础配置，默认读取后台配置，优先读取代码配置
+ * @param complete 登录结果
+ */
+- (void)showAccountLoginViewWithConfig:(RXLoginUIModel *)config
+                              complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
 // 关闭登陆弹窗
 - (void)closeLoginView;
 
@@ -300,6 +318,11 @@ typedef enum : NSUInteger {
  * 设置 webView
  */
 - (void)setWebView:(WKWebView *)webView;
+
+/**
+ * 是否允许使用三方键盘
+ */
+- (BOOL)allowExtensionPointIdentifier;
 
 ///**
 // * 我的意见反馈列表
