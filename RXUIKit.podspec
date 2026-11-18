@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '4.1.2'
+  s.version          = '4.0.0.1000'
   #s.version          = '3.0.0.102'
   s.summary          = 'ruixue UI framework.'
 
@@ -31,25 +31,22 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '15.0'
 
-   s.source_files = '*.framework/Headers/*.{h,m,plist}'
+   s.source_files = 'RXUIKit.xcframework/ios-arm64/RXUIKit.framework/Headers/*.{h,m,plist}'
   
-   s.vendored_frameworks = '*.framework'
+   s.vendored_frameworks = '*.xcframework'
   
-  s.resources          = "*.framework/RXUIKit.bundle"
+  s.resources          = "RXUIKit.xcframework/ios-arm64/RXUIKit.framework/RXUIKit.bundle"
   
   # s.resource_bundles = {
   #   'RXSDK' => ['RXSDK/Assets/*.png']
   # }
-  
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'AdSupport', 'iAd', 'Foundation', 'UIKit', 'CoreTelephony', 'Network'
   s.libraries = 'sqlite3', 'c++', 'c++abi', 'z'
 #
   s.platform = :ios, '15.0'
-  s.dependency 'RXSDK_Pure'
-  s.dependency 'RXWXSDK'
-  s.dependency 'RXAuthSDK_official'
   
+  s.dependency 'RXSDK_Pure', '4.0.0.1000'
+  s.dependency 'RXWXSDK', '4.0.0.1000'
 end
