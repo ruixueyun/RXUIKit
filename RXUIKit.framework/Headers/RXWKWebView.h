@@ -45,6 +45,8 @@ typedef void(^CloseComplete)(RX_CommonRequestError *error);
 - (void)showNavi:(BOOL)show;
 
 - (void)layoutViews;
+/** 按自身 bounds 重新布局导航栏和网页，窗口尺寸变化（如折叠屏展开/合上）时调用 */
+- (void)layoutToBounds;
 
 - (void)hide;
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXUIKit'
-  s.version          = '4.1.2'
+  s.version          = '4.0.0.1001'
   #s.version          = '3.0.0.102'
   s.summary          = 'ruixue UI framework.'
 
@@ -48,8 +48,8 @@ TODO: Add long description of the pod here.
   s.libraries = 'sqlite3', 'c++', 'c++abi', 'z'
 #
   s.platform = :ios, '15.0'
-  s.dependency 'RXSDK_Pure'
-  s.dependency 'RXWXSDK'
+  s.dependency 'RXSDK_Pure', '4.0.0.1001'
+  s.dependency 'RXWXSDK', '4.0.0.1001'
   s.dependency 'RXAuthSDK_official'
   
 end
